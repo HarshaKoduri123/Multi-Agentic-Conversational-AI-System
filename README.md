@@ -113,6 +113,28 @@ Access the API at: `http://127.0.0.1:8000/`
 
 ---
 
+## Requests and Responses
+
+- Create User
+![Create User](imgs/create_user.jpeg)
+
+- Update User
+![Update User](imgs/update_user.jpeg)
+
+- Upload Docs
+![Upload Docs](imgs/upload_doc.jpeg)
+
+- Chat
+![Chat](imgs/chat.jpeg)
+
+- Get Converstion
+![Get Converstion](imgs/user_conversation.jpeg)
+
+- Reset Converstion
+![Reset Converstion](imgs/reset_converstion.jpeg)
+
+- Delete User
+![Delete User](imgs/user_delete.jpeg)
 
 
 ---
