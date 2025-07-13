@@ -107,8 +107,8 @@ Access the API at: `http://127.0.0.1:8000/`
 | `/upload_docs`                   | POST   | Upload CSV knowledge base                  |
 | `/crm/create_user`               | POST   | Create user profile                        |
 | `/crm/update_user`               | PUT    | Update user info                           |
-| `/crm/delete_user/<user_id>`     | DELETE | Delete a user                              |
-| `/crm/conversations/<user_id>`   | GET    | Get conversation history of a user         |
+| `/crm/delete_user`               | DELETE | Delete a user                              |
+| `/crm/conversations`             | POST   | Get conversation history of a user         |
 | `/reset`                         | POST   | Reset memory (WIP)                         |
 
 ---
