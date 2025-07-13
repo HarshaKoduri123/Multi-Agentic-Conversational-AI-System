@@ -148,8 +148,26 @@ def delete_user(request):
 @csrf_exempt
 @require_http_methods(["GET"])
 def get_conversations(request, user_id):
-    return JsonResponse({"message": f"Conversations for user {user_id} retrieved."}, status=200)
+    try:
+        user = UserProfile.objects.get(id=user_id)
+        messages = ConversationMessage.objects.filter(user=user).order_by("timestamp")
 
+        conversation_history = [
+            {
+                "role": msg.role,
+                "content": msg.content,
+                "timestamp": msg.timestamp.strftime("%Y-%m-%d %H:%M:%S")
+            }
+            for msg in messages
+        ]
+
+        return JsonResponse({"user_id": user_id, "messages": conversation_history}, status=200)
+
+    except UserProfile.DoesNotExist:
+        return JsonResponse({"error": f"User with ID {user_id} not found."}, status=404)
+
+    except Exception as e:
+        return JsonResponse({"error": str(e)}, status=500)
 # --- /reset ---
 @csrf_exempt
 @require_http_methods(["POST"])
