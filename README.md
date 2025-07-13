@@ -6,7 +6,7 @@ A lightweight **multi-agent conversational backend** powered by **LangChain**, *
 - Conversational memory per user
 - CSV-based document retrieval using **RAG (Retrieval-Augmented Generation)**
 - User management (CRUD) via CRM endpoints
-- Built fully in **Django**, with no frontend or GPU required
+- Built fully in **Django**
 
 > ✅ Designed for **API-only** usage with tools like **Insomnia** or **Postman**  
 > ⚙️ Powered by **Ollama** (e.g., `mistral`, `phi3:mini`) for local LLM inference
