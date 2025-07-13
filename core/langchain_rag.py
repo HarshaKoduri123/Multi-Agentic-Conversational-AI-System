@@ -17,8 +17,8 @@ FAISS_PATH = "rag_index"
 # Embedding model
 embedder = HuggingFaceEmbeddings(model_name=embedding_model_name)
 
-# llm = ChatOllama(model="mistral")
-llm = ChatOllama(model="gemma:2b",timeout=120)
+llm = ChatOllama(model="mistral")
+# llm = ChatOllama(model="gemma:2b",timeout=120)
 
 
 
