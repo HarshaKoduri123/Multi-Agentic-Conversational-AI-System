@@ -144,11 +144,17 @@ def delete_user(request):
     except Exception as e:
         return JsonResponse({"error": str(e)}, status=500)
 
-# --- /crm/conversations/<user_id> ---
+# --- /crm/conversations ---
 @csrf_exempt
-@require_http_methods(["GET"])
-def get_conversations(request, user_id):
+@require_http_methods(["POST"])
+def get_conversations(request):
     try:
+        data = json.loads(request.body)
+        user_id = data.get("user_id")
+
+        if not user_id:
+            return JsonResponse({"error": "user_id is required in the request body."}, status=400)
+
         user = UserProfile.objects.get(id=user_id)
         messages = ConversationMessage.objects.filter(user=user).order_by("timestamp")
 
