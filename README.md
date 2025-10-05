@@ -30,7 +30,7 @@ agenticsys/
 
 ---
 
-## ⚙️ Setup Instructions (No GPU, No Frontend)
+## ⚙️ Setup Instructions
 
 ### ✅ 1. Clone the repository
 
